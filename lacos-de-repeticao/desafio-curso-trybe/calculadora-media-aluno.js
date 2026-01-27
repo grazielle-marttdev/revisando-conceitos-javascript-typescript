@@ -11,18 +11,34 @@ btnAdicionar.addEventListener('click', () => {
 
     if (nota === '') return;
 
-    notas.push(Number(nota));
-    console.log(notas);
+    if (Number.isNaN(Number(nota))) {
+        spanResultado.className = 'calculadora__result';
 
-    const item = document.createElement('li');
-    item.textContent = nota;
-    lista.appendChild(item);
+        spanResultado.innerHTML = `
+            <p>⚠️ Use ponto (.) para casas decimais.</p>
+            <p>Exemplo válido: 7.5</p>`
 
-    input.value = '';
+        return;
+    } else {
+        spanResultado.innerHTML = '';
+        spanResultado.classList.remove('calculadora__result');
+
+        notas.push(Number(nota));
+        console.log(notas);
+    
+        const item = document.createElement('li');
+        item.classList.add('calculadora__note-item');
+        item.textContent = nota;
+        lista.appendChild(item);
+    
+        input.value = '';
+    }
 });
 
 btnCalcularMedia.addEventListener('click', () => {
     if (notas.length === 0) {
+        spanResultado.className = 'calculadora__result';
+        
         spanResultado.innerHTML = `
             <p>Nenhuma nota foi adicionada.</p>
             <p>Adicione as notas para calcular a média!</p>`;
@@ -31,6 +47,7 @@ btnCalcularMedia.addEventListener('click', () => {
 
     calcularMedia();
     notas = [];
+    lista.innerHTML = '';
 });
 
 function calcularMedia() {
@@ -41,11 +58,15 @@ function calcularMedia() {
     }
 
     const media = somatorioNotas / notas.length;
-    spanResultado.innerHTML = `<p>Resultado da média: ${media.toFixed(1)}</p>`
+    spanResultado.className = 'calculadora__result';
+
+    spanResultado.innerHTML = `
+        <p>Resultado da média:</p>
+        <span class="calculadora__result-average">${media.toFixed(1)}</span>`
 
     if (media > 6) {
-        spanResultado.innerHTML += `<p>A pessoa estudante está APROVADA</P>`;
+        spanResultado.innerHTML += `<p>A pessoa estudante está <span class="calculadora__result-status calculadora__result-status--approved">APROVADA</span></p>`;
     } else {
-        spanResultado.innerHTML += `<p>A pessoa estudante está REPROVADA</p>`;
+        spanResultado.innerHTML += `<p>A pessoa estudante está <span class="calculadora__result-status calculadora__result-status--failed">REPROVADA</span></p>`;
     }
-};
+};    

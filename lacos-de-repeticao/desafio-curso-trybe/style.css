@@ -1,0 +1,193 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+:root {
+    /* Cores de base */
+    --background: hsl(0, 0%, 97%);
+    --card: hsl(0, 0%, 100%); 
+    --border: hsl(214.3, 31.8%, 91.4%);
+
+    /* Cores de marca (Brand) */
+    --primary: hsl(121, 50%, 58%);
+    --primary-hover: hsl(121, 49%, 62%);
+    --secondary: hsl(122, 52%, 71%);
+    --secondary-hover: hsl(121, 57%, 48%);
+    --shadow: hsla(122, 52%, 71%, 0.2);
+
+    /* Cores de texto */
+    --text-primary: hsl(222, 88%, 13%);
+    --text-on-primary: hsl(0, 0%, 100%);
+    --text-secondary: hsl(215, 16%, 47%);
+    --text-muted: hsl(0, 0%, 46%);
+    
+    /* Cores de feedback/status */
+    --success: var(--primary);
+    --danger: hsl(0, 78%, 63%);
+    
+    /* Cores de componentes específicos */
+    --result-background: hsl(120, 50%, 98%);
+    --result-border: hsl(122, 49%, 85%);
+}
+
+body {
+    height: 100vh;
+    background-color: var(--background);
+    color: var(--text-primary);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.calculadora {
+    display: flex;
+    flex-direction: column;
+    max-width: 447px;
+    width: 100%;
+    background-color: var(--card);
+    padding: 1.5rem 1.5rem 0;
+    border-radius: 10px;
+    box-shadow: var(--shadow) 0px 8px 24px;
+}
+
+.calculadora__header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.calculadora__header-icon {
+    color: var(--primary);
+    font-size: 1.875rem;
+}
+
+.calculadora__title {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.calculadora__input-group {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.calculadora__input-icon {
+    position: absolute;
+    top: 14%;
+    left: 12px;
+    color: var(--text-muted);
+}
+
+.calculadora__input {
+    font-size: 1rem;
+    padding: 0.5rem 0.75rem 0.5rem 2.50rem;
+    background-color: var(--background);
+    border: 2px solid var(--border);
+    border-radius: 8px;
+}
+
+.calculadora__input:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.calculadora__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    color: var(--text-on-primary);
+    font-weight: 600;
+    padding: 12px 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s ease-in-out;
+}
+
+.calculadora__button:hover {
+    transform: scale(1.01);
+}
+
+.calculadora__button .fa-plus,
+.calculadora__button .fa-equals {
+    font-size: 0.875rem;
+}
+
+.calculadora__button--add {
+    background-color: var(--primary);
+    font-size: 0.875rem;
+}
+
+.calculadora__button--add:hover {
+    background-color: var(--primary-hover);
+}
+
+.calculadora__button--calculate {
+    background-color: var(--secondary);
+    font-size: 1rem;
+    margin: 1.5rem 0;
+}
+
+.calculadora__button--calculate:hover {
+    background-color: var(--secondary-hover);
+}
+
+.calculadora__notes-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.calculadora__note-item {
+    list-style: none;
+    font-weight: 600;
+    background-color: var(--background);
+    padding: 0.625rem 1rem;
+    border-radius: 10px;
+}
+
+.calculadora__result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--result-background);
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    font-weight: 600;
+    padding: 1.25rem;
+    margin-bottom: 1.5rem;
+    border: 2px solid var(--result-border);
+    border-radius: 12px;
+}
+
+.calculadora__result-average {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: var(--success);
+    margin-bottom: 0.75rem;
+}
+
+.calculadora__result-status {
+    font-weight: 700;
+}
+
+.calculadora__result-status--approved {
+    color: var(--success);
+}
+
+.calculadora__result-status--failed {
+    color: var(--danger);
+}

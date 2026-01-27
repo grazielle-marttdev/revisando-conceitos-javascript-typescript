@@ -5,23 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora de Médias</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <main class="container">
         <div class="calculadora">
-            <h1>Calculadora de Médias</h1>
+            <header class="calculadora__header">
+                <i class="fa-solid fa-calculator calculadora__header-icon"></i>
+                <h1 class="calculadora__title">Calculadora de Médias</h1>
+            </header>
 
-            <div class="inputs">
-                <div>
-                    <label for="nota">Nota:</label>
-                    <input type="text" placeholder="Insira a nota" id="nota">
-                </div>
-
-                <button class="btn adicionar" id="btn-adicionar">Adicionar Nota</button>
+            <div class="calculadora__input-group">
+                <i class="fa-solid fa-book-open calculadora__input-icon"></i>
+                <input class="calculadora__input" type="text" placeholder="Insira a nota" id="nota">
+                
+                <button class="calculadora__button calculadora__button--add" id="btn-adicionar">
+                    <i class="fa-regular fa-plus"></i>
+                    Adicionar Nota
+                </button>
             </div>
-    
-            <ul id="notas"></ul>
-            <button class="btn calcular" id="btn-calcular">Calcular Média</button>
+
+            <ul class="calculadora__notes-list" id="notas"></ul>
+            
+            <button class="calculadora__button calculadora__button--calculate" id="btn-calcular">
+                <i class="fa-regular fa-equals"></i>
+                Calcular Média
+            </button>
     
             <div id="resultado"></div>
         </div>
