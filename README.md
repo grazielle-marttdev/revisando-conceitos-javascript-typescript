@@ -1,70 +1,37 @@
 # Revisando Conceitos de JavaScript e TypeScript
 
-Este repositório reúne exercícios e pequenos projetos que estou usando para revisar fundamentos de JavaScript/TypeScript.
+Este repositório é o meu "laboratório" pessoal de estudos, onde reúno exercícios, desafios de lógica e pequenos projetos para consolidar meus conhecimentos em desenvolvimento Web.
 
-A ideia é praticar conceitos isolados (funções, laços, objetos, arrays, HOFs, etc.) e, quando fizer sentido, transformar alguns exercícios em versões com interface para visualização no navegador.
+A ideia é praticar desde os fundamentos (funções, laços, objetos, arrays, HOFs) até a construção de interfaces interativas e consumo de APIs.
 
-## Objetivo
+## 🚀 Status do Aprendizado
 
-- Revisar conceitos essenciais de JavaScript/TypeScript.
-- Praticar resolução de problemas com exercícios progressivos.
-- Criar versões mais elaboradas de alguns desafios (ex.: calculadora de média da Trybe).
-- Manter uma página inicial para acessar os exercícios com interface.
+- **JavaScript:** Em prática constante (Lógica, DOM, APIs).
+- **TypeScript:** ⚠️ Ainda não iniciado. Atualmente, todos os exercícios e mini-projetos estão sendo desenvolvidos em JavaScript puro para fortalecer a base antes de migrar para o superset.
 
-## Estrutura do Projeto
+## 🎯 Objetivos
 
-```text
-|-- arrays-slice-splice/
-|-- desafio-sistema-simples-de-pedidos/
-|-- desestruturacao-e-spread/
-|-- funcoes/
-|-- higher-order-functions/
-|-- lacos-de-repeticao/
-|   |-- desafio-curso-trybe/
-|   |   |-- index.html
-|   |   |-- style.css
-|   |   `-- calculadora-media-aluno.js
-|-- map-filter-find-reduce/
-|-- objetos/
-|-- parametro-rest/
-|-- index.html
-```
+- Fortalecer a lógica de programação com desafios práticos.
+- Revisar conceitos essenciais e avançados de JavaScript.
+- Praticar a manipulação do DOM e integração com APIs.
+- Desenvolver interfaces simples e responsivas com HTML e CSS.
 
-## Exercícios com Interface
+## 📂 Como Navegar
 
-Alguns exercícios possuem interface visual para facilitar testes e demonstração.
+Como este repositório está em constante evolução, os exercícios estão organizados em pastas por categoria temática. Você encontrará:
+- **Exercícios de Lógica:** Executáveis via terminal com Node.js.
+- **Mini-projetos com Interface:** Podem ser visualizados abrindo o `index.html` na raiz ou nas pastas específicas.
 
-Nesses casos, a interface também me ajuda a praticar HTML e CSS, além dos conceitos de JavaScript/TypeScript.
+## 🛠️ Como Executar
 
-## Página de Navegação
-
-A página raiz (`index.html`) funciona como um hub para acessar os exercícios com interface.
-
-Para abrir:
-
-1. Abra o arquivo `index.html` na raiz do projeto.
-2. Clique no card do projeto desejado.
-
-## Como Executar
-
-### Exercícios sem interface
-
-Os exercícios focados em lógica (sem HTML) são executados com Node.js no terminal.
-
-Exemplo:
-
+### Exercícios de Lógica (Terminal)
+Para testar os scripts de lógica, você pode usar o Node.js:
 ```bash
-node parametro-rest/exercicio.js
+node nome-da-pasta/arquivo.js
 ```
 
-### Exercícios com interface
+### Projetos com Interface (Navegador)
+Basta abrir o arquivo `index.html` (na raiz ou dentro da pasta do projeto) diretamente no seu navegador de preferência.
 
-Como são arquivos HTML/CSS/JS puros, você pode:
-
-1. Abrir diretamente os arquivos `.html` no navegador.
-2. Opcionalmente usar uma extensão de servidor local (como Live Server no VS Code) para melhor experiência.
-
-## Observações
-
-- O repositório está em evolução: novos exercícios e interfaces serão adicionados.
-- Alguns exercícios são focados apenas em lógica (sem interface), executados via Node.js no console.
+---
+*Repositório em constante evolução!*
