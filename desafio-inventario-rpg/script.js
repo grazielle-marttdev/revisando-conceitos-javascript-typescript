@@ -12,11 +12,34 @@ const inventario = [
     { item: "Picareta", quantidade: 2 }
 ];
 
-inventario.forEach(item => {
-    const li = document.createElement('li');
-    li.textContent = `${item.item}: ${item.quantidade}`;
-    inventarioUl.appendChild(li);
-});
+function atualizarInventario() {
+    // Limpar lista e select
+    inventarioUl.innerHTML = '';
+    selecionarItem.innerHTML = '<option value="">Selecione um item</option>';
+    
+    inventario.forEach((item, index) => {
+        // Atualizar lista visual (Slots)
+        const li = document.createElement('li');
+
+        const nomeSpan = document.createElement('span');
+        nomeSpan.textContent = item.item;
+        nomeSpan.classList.add('item-name');
+        
+        const qtdSpan = document.createElement('span');
+        qtdSpan.textContent = `x${item.quantidade}`;
+        qtdSpan.classList.add('item-quantity');
+        
+        li.appendChild(nomeSpan);
+        li.appendChild(qtdSpan);
+        inventarioUl.appendChild(li);
+
+        // Atualizar Select
+        const option = document.createElement('option');
+        option.value = index; // Usando index para ser mais preciso
+        option.textContent = item.item;
+        selecionarItem.appendChild(option);
+    });
+}
 
 adicionarBtn.addEventListener("click", () => {
     const itemInput = document.getElementById("itemInput");
@@ -36,32 +59,14 @@ adicionarBtn.addEventListener("click", () => {
     }
 });
 
-inventario.forEach(item => {
-    const option = document.createElement('option');
-    option.value = item.item;
-    option.textContent = item.item;
-    selecionarItem.appendChild(option);
-})
-
 removerBtn.addEventListener("click", () => {
-    const itemSelecionado = selecionarItem.value;
+    const indexSelecionado = selecionarItem.value;
 
-    inventario.forEach((item, index) => {
-        if (item.item === itemSelecionado) {
-            inventario.splice(index, 1);
-        }
-    });
-
-    atualizarInventario();
-    selecionarItem.value = '';
+    if (indexSelecionado !== "") {
+        inventario.splice(parseInt(indexSelecionado), 1);
+        atualizarInventario();
+    }
 });
 
-function atualizarInventario() {
-    inventarioUl.innerHTML = '';
-    
-    inventario.forEach(item => {
-        const li = document.createElement('li');
-        li.textContent = `${item.item}: ${item.quantidade}`;
-        inventarioUl.appendChild(li);
-    });
-}
+// Inicialização
+atualizarInventario();
