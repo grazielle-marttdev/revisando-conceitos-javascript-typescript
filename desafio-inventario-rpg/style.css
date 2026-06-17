@@ -20,7 +20,7 @@ main {
     align-items: center;
     gap: 1rem;
     width: 100%;
-    max-width: 900px;
+    max-width: 950px;
     margin: 0 auto;
 }
 
@@ -29,12 +29,20 @@ h1 {
     margin-bottom: 2rem;
 }
 
+h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.inventario {
+    width: 100%;
+    max-width: 420px;
+}
+
 ul {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    width: 100%;
-    max-width: 420px;
 }
 
 ul li {
