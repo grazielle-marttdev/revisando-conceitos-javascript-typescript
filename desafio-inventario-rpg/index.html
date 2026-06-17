@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criando um Inventário de RPG</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Inventário de RPG</h1>
+    <main>
+    
+        
+        <div class="container">
+            <div class="adicionar">
+                <div>
+                    <label for="itemInput">Adicionar item:</label>
+                    <input type="text" id="itemInput">
+                </div>
+        
+                <div>
+                    <label for="quantidadeInput">Quantidade:</label>
+                    <input type="number" id="quantidadeInput">
+                </div>
+        
+                <button id="adicionarBtn">Adicionar</button>
+            </div>
+        
+            <div class="remover">
+                <label for="remover">Remover item:</label>
+                <select id="selecionarItem">
+                    <option value="">Selecione um item</option>
+                </select>
+        
+                <button id="removerBtn">Remover</button>
+            </div>
+        </div>
+        
+        <h2>Inventário</h2>
+        <ul id="inventario"></ul>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
